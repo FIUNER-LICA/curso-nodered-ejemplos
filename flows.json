@@ -1,1 +1,465 @@
-[]
+[
+    {
+        "id": "289db066f9280154",
+        "type": "tab",
+        "label": "Flujo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f20b5357d955d9b3",
+        "type": "group",
+        "z": "289db066f9280154",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "33de57ef5eb6ff24",
+            "46401ac0834d0344",
+            "51f9b6f9fbf0abdd",
+            "22d5fc987e720e52",
+            "0c06e87752b11223",
+            "1201de277fbab75f",
+            "043a50d2d8eb7302",
+            "124ecbdca60c0da1"
+        ],
+        "x": 14,
+        "y": 19,
+        "w": 712,
+        "h": 382
+    },
+    {
+        "id": "da53cb388ff87dbd",
+        "type": "group",
+        "z": "289db066f9280154",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "bf9c0706d3fd515e",
+            "56fe569f21bec7ea",
+            "940ad970797c904c",
+            "959ad45ba359f803",
+            "c39528fb5c821b07",
+            "0cbc00b44f47fc08",
+            "b9be331c2d1ee782",
+            "41c04128dba2ef13",
+            "9fc0424b258cbccf",
+            "5eec497bc0b241ed",
+            "f8ce1fe8b24448b6"
+        ],
+        "x": 14,
+        "y": 459,
+        "w": 1012,
+        "h": 322
+    },
+    {
+        "id": "33de57ef5eb6ff24",
+        "type": "inject",
+        "z": "289db066f9280154",
+        "g": "f20b5357d955d9b3",
+        "name": "Inject: FECHA",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "iso",
+        "payloadType": "date",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "46401ac0834d0344"
+            ]
+        ]
+    },
+    {
+        "id": "46401ac0834d0344",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "g": "f20b5357d955d9b3",
+        "name": "Salida: FECHA",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "51f9b6f9fbf0abdd",
+        "type": "inject",
+        "z": "289db066f9280154",
+        "g": "f20b5357d955d9b3",
+        "name": "Inject: payload (text) y topic (número)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hola mundo! (en node-red)",
+        "payloadType": "str",
+        "x": 230,
+        "y": 200,
+        "wires": [
+            [
+                "22d5fc987e720e52",
+                "0c06e87752b11223",
+                "1201de277fbab75f"
+            ]
+        ]
+    },
+    {
+        "id": "22d5fc987e720e52",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "g": "f20b5357d955d9b3",
+        "name": "Salida: PAYLOAD",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "0c06e87752b11223",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "g": "f20b5357d955d9b3",
+        "name": "Salida: TOPIC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "1201de277fbab75f",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "g": "f20b5357d955d9b3",
+        "name": "Salida: MSG completo",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "043a50d2d8eb7302",
+        "type": "comment",
+        "z": "289db066f9280154",
+        "g": "f20b5357d955d9b3",
+        "name": "Flujo ENTRADA-SALIDA",
+        "info": "",
+        "x": 150,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "124ecbdca60c0da1",
+        "type": "comment",
+        "z": "289db066f9280154",
+        "g": "f20b5357d955d9b3",
+        "name": "Se pueden \"apagar las salidas debug haciendo click sobre las cajas verdes",
+        "info": "",
+        "x": 440,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "bf9c0706d3fd515e",
+        "type": "inject",
+        "z": "289db066f9280154",
+        "g": "da53cb388ff87dbd",
+        "name": "Inject: payload y topic (ambos texto)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "TOPIC DE PRUEBA",
+        "payload": "PAYLOAD DE PRUEBA",
+        "payloadType": "str",
+        "x": 200,
+        "y": 560,
+        "wires": [
+            [
+                "56fe569f21bec7ea",
+                "940ad970797c904c",
+                "959ad45ba359f803",
+                "c39528fb5c821b07"
+            ]
+        ]
+    },
+    {
+        "id": "56fe569f21bec7ea",
+        "type": "change",
+        "z": "289db066f9280154",
+        "g": "da53cb388ff87dbd",
+        "name": "Reemplaza el payload por otro valor",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "OTRO MENSAJE",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 560,
+        "wires": [
+            [
+                "0cbc00b44f47fc08"
+            ]
+        ]
+    },
+    {
+        "id": "940ad970797c904c",
+        "type": "change",
+        "z": "289db066f9280154",
+        "g": "da53cb388ff87dbd",
+        "name": "Cambia parte del payload (\"PRUEBA\" por \"TEST\")",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "PRUEBA",
+                "fromt": "str",
+                "to": "TEST",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 600,
+        "wires": [
+            [
+                "b9be331c2d1ee782"
+            ]
+        ]
+    },
+    {
+        "id": "959ad45ba359f803",
+        "type": "change",
+        "z": "289db066f9280154",
+        "g": "da53cb388ff87dbd",
+        "name": "Elimina el payload",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 640,
+        "wires": [
+            [
+                "41c04128dba2ef13"
+            ]
+        ]
+    },
+    {
+        "id": "c39528fb5c821b07",
+        "type": "change",
+        "z": "289db066f9280154",
+        "g": "da53cb388ff87dbd",
+        "name": "Mueve el payload al topic (cortar y pegar)",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "topic",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 680,
+        "wires": [
+            [
+                "9fc0424b258cbccf"
+            ]
+        ]
+    },
+    {
+        "id": "0cbc00b44f47fc08",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "g": "da53cb388ff87dbd",
+        "name": "SALIDA: establece",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "b9be331c2d1ee782",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "g": "da53cb388ff87dbd",
+        "name": "SALIDA: cambia",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "41c04128dba2ef13",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "g": "da53cb388ff87dbd",
+        "name": "SALIDA: elimina",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "9fc0424b258cbccf",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "g": "da53cb388ff87dbd",
+        "name": "Salida: mueve",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "5eec497bc0b241ed",
+        "type": "comment",
+        "z": "289db066f9280154",
+        "g": "da53cb388ff87dbd",
+        "name": "Se pueden \"apagar las salidas debug haciendo click sobre las cajas verdes",
+        "info": "",
+        "x": 680,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "f8ce1fe8b24448b6",
+        "type": "comment",
+        "z": "289db066f9280154",
+        "g": "da53cb388ff87dbd",
+        "name": "Flujo: ENTRADA-CAMBIO-SALIDA",
+        "info": "",
+        "x": 180,
+        "y": 500,
+        "wires": []
+    }
+]
