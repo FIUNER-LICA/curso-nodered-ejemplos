@@ -740,7 +740,7 @@
                 "t": "set",
                 "p": "temperatura",
                 "pt": "msg",
-                "to": "\"ALARMA!! Temperatura =  \" & temperatura",
+                "to": "ALARMA!! Temperatura =  &temperatura",
                 "tot": "str"
             }
         ],
