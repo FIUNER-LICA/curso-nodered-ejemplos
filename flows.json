@@ -740,8 +740,8 @@
                 "t": "set",
                 "p": "temperatura",
                 "pt": "msg",
-                "to": "ALARMA!! Temperatura =  &temperatura",
-                "tot": "str"
+                "to": "\"ALARMA!! Temperatura =\"  &temperatura",
+                "tot": "jsonata"
             }
         ],
         "action": "",
