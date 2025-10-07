@@ -783,7 +783,7 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "payload",
+        "complete": "temperatura",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
