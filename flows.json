@@ -67,6 +67,35 @@
         "h": 322
     },
     {
+        "id": "45f140f369b945fc",
+        "type": "group",
+        "z": "289db066f9280154",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "b206d26b0a051aee",
+            "7abc27116efd3803",
+            "6457207b11394ac1",
+            "4eedd953c25564eb",
+            "1c4d77d4fb25db24",
+            "c150abe3838a241b",
+            "024bb8d513a8f81b",
+            "eb1e38c5fe941503",
+            "c9656820777c30b3"
+        ],
+        "x": 14,
+        "y": 819,
+        "w": 952,
+        "h": 322
+    },
+    {
         "id": "33de57ef5eb6ff24",
         "type": "inject",
         "z": "289db066f9280154",
@@ -460,6 +489,306 @@
         "info": "",
         "x": 180,
         "y": 500,
+        "wires": []
+    },
+    {
+        "id": "b206d26b0a051aee",
+        "type": "inject",
+        "z": "289db066f9280154",
+        "g": "45f140f369b945fc",
+        "name": "Inject: numero al azar (entre 0 y 0.99)",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "$random()",
+        "payloadType": "jsonata",
+        "x": 210,
+        "y": 920,
+        "wires": [
+            [
+                "7abc27116efd3803",
+                "4eedd953c25564eb"
+            ]
+        ]
+    },
+    {
+        "id": "7abc27116efd3803",
+        "type": "range",
+        "z": "289db066f9280154",
+        "g": "45f140f369b945fc",
+        "minin": "0",
+        "maxin": "0.99",
+        "minout": "1",
+        "maxout": "40",
+        "action": "scale",
+        "round": true,
+        "property": "payload",
+        "name": "Mapear rango: (0-0.99) A (1-40)",
+        "x": 530,
+        "y": 960,
+        "wires": [
+            [
+                "1c4d77d4fb25db24"
+            ]
+        ]
+    },
+    {
+        "id": "6457207b11394ac1",
+        "type": "inject",
+        "z": "289db066f9280154",
+        "g": "45f140f369b945fc",
+        "name": "Inject: numero al azar (entre 1 y 40)",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "$floor($random()*40)+1",
+        "payloadType": "jsonata",
+        "x": 200,
+        "y": 1040,
+        "wires": [
+            [
+                "eb1e38c5fe941503"
+            ]
+        ]
+    },
+    {
+        "id": "4eedd953c25564eb",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "g": "45f140f369b945fc",
+        "name": "Número: 0 - 0.99",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "1c4d77d4fb25db24",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "g": "45f140f369b945fc",
+        "name": "Número: 1 - 40",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "c150abe3838a241b",
+        "type": "comment",
+        "z": "289db066f9280154",
+        "g": "45f140f369b945fc",
+        "name": "Flujo: ENTRADA (usando función de expresion) - RANGO - SALIDA",
+        "info": "",
+        "x": 280,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "024bb8d513a8f81b",
+        "type": "comment",
+        "z": "289db066f9280154",
+        "g": "45f140f369b945fc",
+        "name": "Se pueden \"apagar las salidas debug haciendo click sobre las cajas verdes",
+        "info": "",
+        "x": 640,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "eb1e38c5fe941503",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "g": "45f140f369b945fc",
+        "name": "Número: 1 - 40",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "c9656820777c30b3",
+        "type": "comment",
+        "z": "289db066f9280154",
+        "g": "45f140f369b945fc",
+        "name": "Es posible implementar una función más compleja para generar numeros en un rango específico",
+        "info": "",
+        "x": 370,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "6aba8bcadaeb856b",
+        "type": "inject",
+        "z": "289db066f9280154",
+        "name": "Inject: numero al azar (entre 0 y 0.99)",
+        "props": [
+            {
+                "p": "temperatura",
+                "v": "$random()",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 1260,
+        "wires": [
+            [
+                "80abcf797ac42c45"
+            ]
+        ]
+    },
+    {
+        "id": "80abcf797ac42c45",
+        "type": "range",
+        "z": "289db066f9280154",
+        "minin": "0",
+        "maxin": "0.99",
+        "minout": "1",
+        "maxout": "40",
+        "action": "scale",
+        "round": true,
+        "property": "temperatura",
+        "name": "Mapear rango: (0-0.99) A (1-40)",
+        "x": 190,
+        "y": 1320,
+        "wires": [
+            [
+                "509a2095abafb2f7"
+            ]
+        ]
+    },
+    {
+        "id": "509a2095abafb2f7",
+        "type": "switch",
+        "z": "289db066f9280154",
+        "name": "Revisar temperatura entrada",
+        "property": "temperatura",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "25",
+                "vt": "str"
+            },
+            {
+                "t": "gt",
+                "v": "20",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 580,
+        "y": 1320,
+        "wires": [
+            [
+                "edd3d29dfb48771b"
+            ],
+            [
+                "2ac2e284996ebc20"
+            ]
+        ]
+    },
+    {
+        "id": "2ac2e284996ebc20",
+        "type": "change",
+        "z": "289db066f9280154",
+        "name": "Crear mensaje de alarma",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperatura",
+                "pt": "msg",
+                "to": "\"ALARMA!! Temperatura =  \" & temperatura",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 1380,
+        "wires": [
+            [
+                "de5e0c08462926b6"
+            ]
+        ]
+    },
+    {
+        "id": "de5e0c08462926b6",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "name": "SALIDA ALARMA (payload > 25)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "edd3d29dfb48771b",
+        "type": "debug",
+        "z": "289db066f9280154",
+        "name": "SALIDA temperatura actual",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 1300,
         "wires": []
     }
 ]
